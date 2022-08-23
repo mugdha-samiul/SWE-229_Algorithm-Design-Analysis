@@ -17,9 +17,9 @@ void primeFinder(){
         for(int j = 0;j < curSizeOfPrimes && primes[j]*i < MAX;j++){
                                                     /*this loop will iterate the whole primes array and mark the composite numbers*/
             allFlags[i*(primes[j])] = true;         //q=i*p, flagging the qs in this statement
-            if(i%primes[j]==0)break;                /*  q=i*primes[j+1] will be skipped cause q has smaller prime factor than primes[i]
-                                                        example : i=15... i*2=30, i*3=45, i*5 = 75 these 3 numbers are marked butt
-                                                        i*7 = 105 is not marked in this loop cause it has smaller prime factor(3) than 7
+            if(i%primes[j]==0)break;                /*  q=i*primes[j+1] will be skipped cause q has smaller prime factor than primes[j+1]
+                                                        example : i=15... i*2=30, i*3=45, i*5 = 75 these 3 numbers are marked but
+                                                        i*7 = 105(here q = 105) is not marked in this loop cause it has smaller prime factor(3) than 7
                                                         q=105 will be marked when i=35 && p = 3 (35*3=105)
                                                         that's why the loop will break and no further numbers will be flagged
                                                     */
