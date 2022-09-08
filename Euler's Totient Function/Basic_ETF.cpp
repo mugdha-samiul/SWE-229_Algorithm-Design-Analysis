@@ -8,12 +8,12 @@ ll ETF(ll n){                       //O(sqrt(N)) for each query
     for(ll i = 2;i * i <= n;i++){
         if(n % i == 0){             //finding the prime divisors of n {'i's will be prime here}
             res /= i;               //dividing by i and multiplying by i-1
-            res *= (i-1);           //basically doing this -> n * ((P1-1)/P1)
+            res *= (i-1);           //basically doing this -> n * ((Pi-1)/Pi)
             while(n%i == 0)
-                n /= i;             //dividing by the prime divisor(i) until n have any divisor of (i)
+                n /= i;             //dividing by the prime divisor(i) until n contains any divisor of i
         }
     }
-    if(n>1){                        //it means n is prime, it'll handle this corner case
+    if(n>1){                        //it means n is a prime, handling this corner case
         res /= n;
         res *= (n-1);
     }
