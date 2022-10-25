@@ -22,6 +22,7 @@ int main(){
     cin.tie(NULL);cout.tie(NULL);
     ll a, b;
     cin >> a >> b;
+    if(b>a)swap(a,b);
     d = gcdExtended(a, b, x, y);
     cout << x << " " << y << " " << d << endl;
     return 0;
